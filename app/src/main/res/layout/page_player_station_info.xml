@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -27,4 +28,5 @@
         app:tagHeight="25sp"
         app:textHorizontalPadding="8dp"
         app:textVerticalMargin="4dp" />
-</LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -16,6 +16,7 @@ import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 
+import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.fragment.app.FragmentActivity;
 import androidx.core.content.ContextCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
@@ -105,7 +106,7 @@ public class ItemAdapterStation
 
     class StationViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, SwipeableViewHolder {
         View viewForeground;
-        LinearLayout layoutMain;
+        LinearLayoutCompat layoutMain;
         FrameLayout frameLayout;
 
         ImageView imageViewIcon;

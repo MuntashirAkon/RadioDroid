@@ -8,10 +8,10 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.appcompat.widget.SwitchCompat;
 
 import net.programmierecke.radiodroid2.BuildConfig;
@@ -47,7 +47,7 @@ public class ItemAdapterRadioAlarm extends ArrayAdapter<DataRadioStationAlarm> {
 		SwitchCompat s = (SwitchCompat)v.findViewById(R.id.switch1);
 		ImageButton b = (ImageButton) v.findViewById(R.id.buttonDeleteAlarm);
 		final ImageButton buttonRepeating = (ImageButton) v.findViewById(R.id.checkboxRepeating);
-		final LinearLayout repeatDaysView = (LinearLayout) v.findViewById(R.id.repeatDaysView);
+		final LinearLayoutCompat repeatDaysView = (LinearLayoutCompat) v.findViewById(R.id.repeatDaysView);
 
 		if (repeatDaysView.getChildCount() < 1) {
 			populateWeekDayButtons(aData, vi, repeatDaysView);
@@ -88,7 +88,7 @@ public class ItemAdapterRadioAlarm extends ArrayAdapter<DataRadioStationAlarm> {
 		return v;
 	}
 
-	private void populateWeekDayButtons(final DataRadioStationAlarm aData, LayoutInflater vi, LinearLayout repeatDays) {
+	private void populateWeekDayButtons(final DataRadioStationAlarm aData, LayoutInflater vi, LinearLayoutCompat repeatDays) {
 		String[] mShortWeekDayStrings = this.context.getResources().getStringArray(R.array.weekdays);
 		for (int i = 0; i < 7; i++) {
 			final ViewGroup viewgroup = (ViewGroup) vi.inflate(R.layout.day_button,

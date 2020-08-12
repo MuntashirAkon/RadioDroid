@@ -74,7 +74,10 @@ import okhttp3.OkHttpClient;
 
 import static net.programmierecke.radiodroid2.service.MediaSessionCallback.EXTRA_STATION_UUID;
 
-public class ActivityMain extends AppCompatActivity implements SearchView.OnQueryTextListener, NavigationView.OnNavigationItemSelectedListener, BottomNavigationView.OnNavigationItemSelectedListener, FileDialog.OnFileSelectedListener, TimePickerDialog.OnTimeSetListener, SearchPreferenceResultListener {
+public class ActivityMain extends AppCompatActivity implements SearchView.OnQueryTextListener,
+        NavigationView.OnNavigationItemSelectedListener, SearchPreferenceResultListener,
+        BottomNavigationView.OnNavigationItemSelectedListener, FileDialog.OnFileSelectedListener,
+        TimePickerDialog.OnTimeSetListener {
 
     public static final String EXTRA_SEARCH_TAG = "search_tag";
 

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.res.Resources;
+import android.os.Build;
 import android.os.IBinder;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -44,7 +45,9 @@ public class PlayerServiceUtil {
         anIntent.putExtra(PlayerService.PLAYER_SERVICE_NO_NOTIFICATION_EXTRA, true);
         mainContext = context;
         serviceConnection = getServiceConnection();
-        context.startService(anIntent);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            context.startForegroundService(anIntent);
+        } else context.startService(anIntent);
         context.bindService(anIntent, serviceConnection, Context.BIND_AUTO_CREATE);
         mBound = true;
     }

@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:search="http://schemas.android.com/apk/com.bytehamster.lib.preferencesearch"
     android:title="@string/nav_item_settings"
-    android:key="pref_toplevel"
-    xmlns:search="http://schemas.android.com/apk/com.bytehamster.lib.preferencesearch">
+    android:key="pref_toplevel">
 
     <com.bytehamster.lib.preferencesearch.SearchPreference android:key="searchPreference" />
 
-  <PreferenceScreen android:title="@string/settings_appearance"
+    <PreferenceScreen
+        android:title="@string/settings_appearance"
         search:ignore="true"
         android:key="pref_category_ui">
 
@@ -38,7 +40,8 @@
 
     </PreferenceScreen>
 
-    <PreferenceScreen android:title="@string/settings_startup_behaviour"
+    <PreferenceScreen
+        android:title="@string/settings_startup_behaviour"
         search:ignore="true"
         android:key="pref_category_startup">
 
@@ -60,7 +63,8 @@
 
     </PreferenceScreen>
 
-    <PreferenceScreen android:title="@string/settings_interaction"
+    <PreferenceScreen
+        android:title="@string/settings_interaction"
         search:ignore="true"
         android:key="pref_category_interaction">
 
@@ -109,7 +113,8 @@
 
     </PreferenceScreen>
 
-    <PreferenceScreen android:title="@string/settings_play"
+    <PreferenceScreen
+        android:title="@string/settings_play"
         search:ignore="true"
         android:key="pref_category_player">
 
@@ -151,7 +156,8 @@
             android:title="@string/settings_equalizer" />
     </PreferenceScreen>
 
-    <PreferenceScreen android:title="@string/settings_alarm"
+    <PreferenceScreen
+        android:title="@string/settings_alarm"
         search:ignore="true"
         android:key="pref_category_alarm">
 
@@ -179,9 +185,11 @@
 
     </PreferenceScreen>
 
-    <PreferenceScreen android:title="@string/settings_recordings"
+    <PreferenceScreen
+        android:title="@string/settings_recordings"
         search:ignore="true"
         android:key="pref_category_recordings">
+
         <ListPreference
             android:defaultValue="@string/settings_record_name_formatting_default"
             android:entries="@array/settings_record_name_formatting_list_display"
@@ -190,14 +198,18 @@
             android:summary="%s"
             search:summary=""
             android:title="@string/settings_record_name_formatting" />
+
     </PreferenceScreen>
 
-    <PreferenceScreen android:title="@string/settings_mpd"
+    <PreferenceScreen
+        android:title="@string/settings_mpd"
         search:ignore="true"
         android:key="pref_category_mpd">
+
         <Preference
             android:key="mpd_servers_viewer"
             android:title="@string/settings_view_mpd_servers" />
+
     </PreferenceScreen>
 
     <PreferenceScreen
@@ -212,6 +224,7 @@
             android:summary="@string/settings_seconds_format"
             search:summary=""
             android:title="@string/settings_connect_timeout" />
+
         <net.programmierecke.radiodroid2.views.IntEditTextPreference
             android:defaultValue="10"
             android:key="stream_read_timeout"
@@ -219,6 +232,7 @@
             android:summary="@string/settings_seconds_format"
             search:summary=""
             android:title="@string/settings_read_timeout" />
+
         <net.programmierecke.radiodroid2.views.IntEditTextPreference
             android:defaultValue="10"
             android:key="settings_retry_timeout"
@@ -226,6 +240,7 @@
             android:summary="@string/settings_seconds_format"
             search:summary=""
             android:title="@string/settings_retry_timeout" />
+
         <net.programmierecke.radiodroid2.views.IntEditTextPreference
             android:defaultValue="100"
             android:key="settings_retry_delay"
@@ -233,6 +248,7 @@
             android:summary="@string/settings_milliseconds_format"
             search:summary=""
             android:title="@string/settings_retry_delay" />
+
         <net.programmierecke.radiodroid2.views.IntEditTextPreference
             android:defaultValue="60"
             android:key="settings_resume_within"
@@ -240,12 +256,15 @@
             android:summary="@string/settings_seconds_format"
             search:summary=""
             android:title="@string/settings_resume_timeout" />
+
         <Preference
             android:key="settings_proxy"
             android:title="@string/settings_proxy" />
+
     </PreferenceScreen>
 
-    <PreferenceScreen android:title="@string/settings_other"
+    <PreferenceScreen
+        android:title="@string/settings_other"
         search:ignore="true"
         android:key="pref_category_other">
 
@@ -258,4 +277,5 @@
             android:title="@string/settings_about" />
 
     </PreferenceScreen>
+
 </PreferenceScreen>
