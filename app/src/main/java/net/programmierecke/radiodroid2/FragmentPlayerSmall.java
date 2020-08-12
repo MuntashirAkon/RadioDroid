@@ -6,6 +6,7 @@ import android.content.*;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.*;
 import android.widget.*;
 
@@ -47,8 +48,6 @@ public class FragmentPlayerSmall extends Fragment {
     private TextView textViewStationName;
     private TextView textViewLiveInfo;
 
-    private TextView textViewLiveInfoBig;
-
     private ImageView imageViewIcon;
 
     private ImageButton buttonPlay;
@@ -89,7 +88,6 @@ public class FragmentPlayerSmall extends Fragment {
 
         textViewStationName = view.findViewById(R.id.textViewStationName);
         textViewLiveInfo = view.findViewById(R.id.textViewLiveInfo);
-        textViewLiveInfoBig = view.findViewById(R.id.textViewLiveInfoBig);
         imageViewIcon = view.findViewById(R.id.playerRadioImage);
 
         buttonPlay = view.findViewById(R.id.buttonPlay);
@@ -234,16 +232,14 @@ public class FragmentPlayerSmall extends Fragment {
 
         StreamLiveInfo liveInfo = PlayerServiceUtil.getMetadataLive();
         String streamTitle = liveInfo.getTitle();
-        if (!TextUtils.isEmpty(streamTitle)) {
+        if (TextUtils.isEmpty(streamTitle) || role == Role.HEADER) {
+            textViewLiveInfo.setVisibility(View.GONE);
+            textViewStationName.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20f);
+        } else {
             textViewLiveInfo.setVisibility(View.VISIBLE);
             textViewLiveInfo.setText(streamTitle);
-            textViewStationName.setGravity(Gravity.BOTTOM);
-        } else {
-            textViewLiveInfo.setVisibility(View.GONE);
-            textViewStationName.setGravity(Gravity.CENTER_VERTICAL);
+            textViewStationName.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14f);
         }
-
-        textViewLiveInfoBig.setText(stationName);
 
         if (!Utils.shouldLoadIcons(getContext())) {
             imageViewIcon.setVisibility(View.GONE);
@@ -258,16 +254,9 @@ public class FragmentPlayerSmall extends Fragment {
         if (role == Role.PLAYER) {
             buttonPlay.setVisibility(View.VISIBLE);
             buttonMore.setVisibility(View.GONE);
-
-            textViewStationName.setVisibility(View.VISIBLE);
-            textViewLiveInfoBig.setVisibility(View.GONE);
         } else if (role == Role.HEADER) {
             buttonPlay.setVisibility(View.GONE);
             buttonMore.setVisibility(View.VISIBLE);
-
-            textViewLiveInfo.setVisibility(View.GONE);
-            textViewStationName.setVisibility(View.GONE);
-            textViewLiveInfoBig.setVisibility(View.VISIBLE);
         }
     }
 
